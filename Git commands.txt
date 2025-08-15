@@ -8,10 +8,7 @@
  7- git push origin main
  ( it can ask id pas)....now code is uploaded to git repo
  u can check it on github
- 8-
-
-
-
+ 
 
 Git status
 Git log … will show all the committed done by others
@@ -93,10 +90,6 @@ History ……will give u all git commands that u did
 
 
 
-
-
-
-
 Git SSH Login
 In this video, we will explore Git SSH login with a remote repository.
 Currently, if you inspect the git/config file using cat, you will notice that it contains an HTTPS URL. Authentication in this case is based on usernames and passwords, which is not an ideal approach.
@@ -136,8 +129,6 @@ Key Takeaways
 • The public SSH key must be added to your GitHub account under SSH and GPG keys in settings.
 • Cloning a private repository via SSH requires matching the private key locally with the public key on GitHub.
 • Git cheat sheets, such as the one from Atlassian BitBucket, are useful references for common Git commands.
-
-
 
 
 
@@ -211,4 +202,5 @@ Key Takeaways
 • Semantic versioning uses a Major.Minor.Patch format to indicate software changes.
 • Git tags can be used to mark commits with semantic version numbers for releases.
 • Tags can be annotated with messages and pushed to remote repositories like GitHub.
+
 • Visual Studio Code integrates with GitHub to manage commits, tags, and releases efficiently.
