@@ -1,0 +1,214 @@
+ 1- create repository
+ 2- clone it own local machine
+ 3- git init
+ 4-  git status------it will give status of my current repo status
+ it will show no commits with untracked file
+ 5- git add .
+ 6- git commit -m " first commit adding html file
+ 7- git push origin main
+ ( it can ask id pas)....now code is uploaded to git repo
+ u can check it on github
+ 8-
+
+
+
+
+Git status
+Git log … will show all the committed done by others
+Git log --oneline ….give short id
+Git show (id) …. What are the commits u changed recently 
+Vim 1.py ……to edit 
+Git pull ….latest change
+Touch 1.py ….to create new file 
+
+Git branch -c branch1……will create new branch
+Git branch -a. ….will show all branches
+Ls …..will show all folders and files
+Git checkout branch1 ……now switch to branch1 from main if I run ls then It will show exactly same as in main branch
+Git rum 2.py ,3.py  …..delete this file 
+Git mv 1.py abc.py   …. Renaming this file 
+Git add .
+Git commit -m"added in branch1"
+Git push origin branch1
+
+
+Suppose if I create branch2 in github then it will have same data as branch1
+Now we have total 3 branch which we can see using git branch -a
+
+Git switch main….it will switch to main branch
+Git push --all origin
+
+Rollback Before Staging
+• git checkout <file>
+This command will revert the file to how it was before the changes were made.
+Inspecting Changes
+To see what changes you have made before staging, use:
+• git status to see which files have been modified.
+• git diff <file> to see the exact changes in a file.
+If you have staged changes, use:
+• git diff --cached to see the differences between the staged changes and the last commit.
+
+Rollback After Staging
+If you have already staged changes but want to unstage them, use:
+• git restore --staged <file>
+This command will unstage the file, moving it back to the modified but unstaged state
+
+Rollback After Commit
+Once you have committed changes, you can still rollback using two main methods:
+1. Git Revert
+• Creates a new commit that undoes the changes introduced by a previous commit.
+• Preserves the commit history.
+• Usage: git revert HEAD or git revert <commit-id>
+2. Git Reset
+• Moves the current branch pointer to a specified commit.
+• Can discard commits and history after the specified commit.
+• Usage: git reset --hard <commit-id>
+Use git revert if you want to keep history and git reset --hard if you want to discard history and roll back directly.
+For example, after committing changes, running git revert HEAD will create a new commit that reverses the last commit. Running git reset --hard <commit-id> will reset the branch to the specified commit and remove all commits after it.
+
+Viewing Commit History and Differences
+To view commit history in a concise format, use:
+• git log --oneline
+To see differences between commits, use:
+• git diff <previous-commit> <current-commit>
+This helps you understand what changes were made between commits before deciding to rollback.
+Summary of Rollback Commands
+• Before staging:
+• git checkout <file> to discard changes.
+• After staging:
+• git restore --staged <file> to unstage changes.
+• After commit:
+• git revert <commit> to create a new commit that undoes changes.
+• git reset --hard <commit> to discard commits and history.
+Always use git diff and git diff --cached to inspect changes before rolling back.
+Key Takeaways
+• Git rollback can be performed at different stages: before staging, after staging, and after committing.
+• Use git checkout <file> to discard changes before staging.
+• Use git restore --staged <file> to unstage changes.
+• Use git revert <commit> to create a new commit that undoes changes, preserving history.
+• Use git reset --hard <commit> to discard commits and history, rolling back directly.
+• The git diff and git diff --cached commands help inspect changes before rolling back.
+
+History ……will give u all git commands that u did
+
+
+
+
+
+
+
+Git SSH Login
+In this video, we will explore Git SSH login with a remote repository.
+Currently, if you inspect the git/config file using cat, you will notice that it contains an HTTPS URL. Authentication in this case is based on usernames and passwords, which is not an ideal approach.
+Using username and password authentication requires remembering and storing passwords, which increases the risk of password exposure.
+GitHub and almost every remote Git repository support SSH-based authentication, which uses SSH keys instead of passwords.
+To use SSH authentication, you first need to generate SSH keys.
+I already have some SSH keys, so I will remove them before generating new ones.
+To generate SSH keys, use the command ssh-keygen. This will create a public and private key pair at the default path.
+I am currently at the path where the .ssh directory is located, which contains the generated keys.
+Inside the .ssh directory, you will find the public key and the private key. I will copy the content of the public key to add it to GitHub.
+Here is how the public key looks. I will copy this content now.
+Next, navigate to your GitHub account.
+Go to the account settings by clicking the top right corner profile icon and selecting "Settings."
+In the settings menu, select the "SSH and GPG keys" section.
+Click on "New SSH key" to add a new key.
+Provide a descriptive title, such as "My Laptop," and paste the public key content into the key field.
+Ensure that you paste the public key here, not the private key.
+Now, I will switch to cloning a repository using the SSH endpoint instead of HTTPS.
+Navigate to the directory where you want to clone the repository, for example, git-repos.
+Copy the SSH endpoint URL of the repository you want to clone.
+Our repository titanwork is private and requires authentication. We will use the SSH URL for cloning.
+Run the command git clone <ssh-url> to clone the repository. Git will authenticate by matching your private key with the public key uploaded to GitHub.
+If the keys match, the cloning will proceed without asking for a username or password.
+If a directory with the repository name already exists, remove it before cloning again.
+When cloning via SSH for the first time, you may be prompted to verify the host fingerprint. Type "yes" to continue if the fingerprint matches.
+Once the fingerprint is accepted, the cloning process will proceed successfully.
+This SSH login method is considered safer than HTTPS login, as it does not require entering a username and password.
+Before concluding, I would like to introduce you to a Git cheat sheet provided by Atlassian BitBucket.
+You can find this cheat sheet by searching for "Git cheat sheet" online and downloading the PDF file.
+This cheat sheet includes common Git commands such as git init, git clone, git config, git add, and git clean, along with descriptions of their functions.
+While there are many Git commands, these are the most commonly used in daily work and are very handy to have as a reference.
+With that, I conclude this Git session. This knowledge is essential for DevOps professionals.
+Thank you for joining me, and I look forward to seeing you in the next session.
+Key Takeaways
+• SSH-based authentication in Git is more secure than HTTPS as it uses key pairs instead of passwords.
+• Generating SSH keys with ssh-keygen creates a public and private key pair for authentication.
+• The public SSH key must be added to your GitHub account under SSH and GPG keys in settings.
+• Cloning a private repository via SSH requires matching the private key locally with the public key on GitHub.
+• Git cheat sheets, such as the one from Atlassian BitBucket, are useful references for common Git commands.
+
+
+
+
+
+Git Tags, Semantic Versioning & More
+Introduction to Git Tags and Semantic Versioning
+In this lecture, we will explore how to use Git tags for semantic versioning. First, let's understand what semantic versioning is.
+Almost every software today uses semantic versioning. For example, consider the Brave browser with version 1.71.114, Git 3.7.6, and Visual Studio 1.91.1. Notice the similarity: these are three numbers separated by dots.
+The format is Major.Minor.Patch:
+• Patch indicates a bug fix or a slight improvement from the previous version.
+• Minor indicates new features or improvements added to the software.
+• Major indicates major changes that are backward incompatible. For example, if a project upgraded from JDK 11 to JDK 17, the major version must change because it no longer supports JDK 11.
+Using Git Tags for Semantic Versioning
+Developers use Git tags to represent semantic versions. After making a commit, they can tag it using the command:
+git tag TagName
+If no commit ID is given, the current commit is tagged. In Git, a tag is simply another name for a commit.
+To see all available tags, use:
+git show tag
+Annotated tags can be created with:
+git tag -a TagName -m "message" commitID
+Here, the tag name follows semantic versioning, for example, 2.1.6 with a message like "Release for something".
+To push tags to a remote repository like GitHub, use:
+• Push a specific tag:
+git push origin tag TagName
+• Push all tags:
+git push --tags
+Practical Exercise: Creating and Using Git Tags
+Let's practice semantic versioning using Git tags. First, log into github.com with your account. Navigate to the repository github.com/hkhcoder/vprofile-project to view the source code and existing tags.
+Fork the repository by clicking on the dropdown and selecting "Create a new fork." Change the repository name to your preference, for example, proton, uncheck "Copy the main branch only," and click "Create fork." This clones the entire vprofile-project repository into your account.
+Clone your forked repository locally using Visual Studio Code:
+• Click on "Source Control".
+• Select "Clone Repository."
+• Paste the HTTPS URL of your forked repository.
+• Choose a destination folder.
+• Open the cloned repository.
+Switch to the branch named atom where we will make changes. Edit the README.md file, for example, change the JDK version from 17 to 21, and save the file.
+Commit your changes:
+• Go to "Source Control."
+• Enter a commit message like "read file changes."
+• Accept the commit message and save.
+Tagging the Commit via Command Line
+Open the terminal or Git Bash within Visual Studio Code:
+• Use Control + Shift + P (or Command + Shift + P on Mac) to open the command palette.
+• Select your preferred terminal profile, such as Git Bash.
+• Open the terminal view.
+List existing tags with:
+git tag
+View details of a tag with:
+git show v2.0.0
+Press Q to quit the detailed view.
+Create a new annotated tag for the latest commit, for example:
+git tag -a v3.5.3 -m "Bug fix release"
+This increments the patch version from 2 to 3. Verify the new tag with git tag.
+Practice making multiple commits and tagging them with semantic versions, including changing the major version for learning purposes. This helps understand the tagging process regardless of correctness.
+Pushing Commits and Tags to Remote Repository
+To push commits and tags, you need to log in to your GitHub account from Visual Studio Code. Install the "GitHub Pull Request" extension from the Extensions panel and sign in.
+Authorize Visual Studio Code to access your GitHub account. If connected to the repository branch, you can sync changes by clicking "Sync Changes" in Source Control and confirming.
+Note that pushing commits does not push tags automatically. To push tags:
+• Open the Command Palette.
+• Search for "Git Push Tags" and select it.
+Alternatively, use "Push and Follow Tags" to push commits and tags together.
+Managing Releases on GitHub
+On your GitHub repository page, navigate to the "Tags" section to see your tags. You can create a release by:
+• Going to "Releases."
+• Clicking "Create a new release."
+• Selecting the branch and tag.
+• Providing a title and detailed description.
+• Publishing the release.
+These concepts will become clearer when integrating with CI/CD pipelines like Jenkins. For now, focus on understanding how to tag commits with semantic versions and manage releases from your code editor.
+This concludes the lecture on Git tags and semantic versioning. See you in the next lecture.
+Key Takeaways
+• Semantic versioning uses a Major.Minor.Patch format to indicate software changes.
+• Git tags can be used to mark commits with semantic version numbers for releases.
+• Tags can be annotated with messages and pushed to remote repositories like GitHub.
+• Visual Studio Code integrates with GitHub to manage commits, tags, and releases efficiently.
